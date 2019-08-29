@@ -254,7 +254,7 @@ services:
       - setup.kibana.host=kibana:5601
       - output.elasticsearch.hosts=["elasticsearch:9200"]
     ports:
-      - 9000:9000
+      - 9001:9000
     volumes:
       # - ${PWD}/configs/filebeat.docker.yml:/usr/share/filebeat/filebeat.yml
       - /var/lib/docker/containers:/var/lib/docker/containers:ro
