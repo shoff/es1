@@ -297,9 +297,9 @@ services:
     networks:
       - ingress
 volumes:
-  esdata1:
-  esdata2:
-  esdata3:
+  esdata01:
+  esdata02:
+  esdata03:
   logs:
 
 networks:
