@@ -204,23 +204,23 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
       - elastic
-  metricbeat:
-    image: docker.elastic.co/beats/metricbeat:7.3.1
+  #metricbeat:
+  #  image: docker.elastic.co/beats/metricbeat:7.3.1
     # command: --strict.perms=false
-    environment:
-      - setup.kibana.host=kibana:5601
-      - output.elasticsearch.hosts=["elasticsearch:9200"]
-    cap_add:
-      - AUDIT_CONTROL
-      - AUDIT_READ
-    volumes:
-      # - ${PWD}/configs/metricbeat.docker.yml:/usr/share/metricbeat/metricbeat.yml
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-      - /sys/fs/cgroup:/hostfs/sys/fs/cgroup:ro
-      - /proc:/hostfs/proc:ro
-      - /:/hostfs:ro
-    networks:
-      - elastic
+  #  environment:
+   #   - setup.kibana.host=kibana:5601
+   #   - output.elasticsearch.hosts=["elasticsearch:9200"]
+   # cap_add:
+  #    - AUDIT_CONTROL
+  #    - AUDIT_READ
+  #  volumes:
+  #    # - ${PWD}/configs/metricbeat.docker.yml:/usr/share/metricbeat/metricbeat.yml
+  #    - /var/run/docker.sock:/var/run/docker.sock:ro
+  #    - /sys/fs/cgroup:/hostfs/sys/fs/cgroup:ro
+  #    - /proc:/hostfs/proc:ro
+  #    - /:/hostfs:ro
+  #  networks:
+  #    - elastic
 
   heartbeat:
     image: docker.elastic.co/beats/heartbeat:7.3.1
